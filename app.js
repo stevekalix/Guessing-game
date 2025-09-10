@@ -1,16 +1,15 @@
-let randomnumber = Math.floor(Math.random() * 10) + 1;
+let randomnumber = Math.floor(Math.random() * 100) + 1;
 let level = 10;
 
 function buttonstart() {
     window.location.href = "index1.html";
 }
-
 function submitstart() {
     const usernumber = Number(document.getElementById("inputnum").value);
     let message = "";
 
-    if (!usernumber || usernumber < 1 || usernumber > 10) {
-        message = "Please enter a valid value between 1 and 10.";
+    if (!usernumber || usernumber < 1 || usernumber > 100) {
+        message = "Please enter a valid value between 1 and 100.";
     } else if (randomnumber === usernumber) {
         window.location.href = "win.html";
     } else if (randomnumber > usernumber) {
@@ -31,7 +30,6 @@ function submitstart() {
     document.getElementById("leave").innerHTML = `Level: ${level}`;
     document.getElementById("inputnum").value="";
 }
-
 function restart(){
     window.location.href="index.html";
 }
